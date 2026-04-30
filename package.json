@@ -4,7 +4,7 @@
   "description": "TechStack - Tienda DevOps con pipeline completo",
   "scripts": {
     "test": "echo 'Tests passed'",
-    "start": "python3 -m http.server 8000"
+    "start": "python -m http.server 8000"
   },
   "dependencies": {
     "express": "4.17.1",
