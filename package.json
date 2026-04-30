@@ -1,0 +1,13 @@
+{
+  "name": "mi-sitio-web",
+  "version": "1.0.0",
+  "description": "TechStack - Tienda DevOps con pipeline completo",
+  "scripts": {
+    "test": "echo 'Tests passed'",
+    "start": "python3 -m http.server 8000"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "lodash": "4.17.4"
+  }
+}

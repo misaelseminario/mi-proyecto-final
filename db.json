@@ -1,0 +1,20 @@
+{
+  "productos": [
+    { "id": 1, "nombre": "MacBook Pro M3", "precio": 2499, "cat": "laptops" },
+    { "id": 2, "nombre": "ThinkPad X1 Carbon", "precio": 1699, "cat": "laptops" },
+    { "id": 3, "nombre": "Framework 16", "precio": 1299, "cat": "laptops" },
+    { "id": 4, "nombre": "MX Master 3S", "precio": 109, "cat": "periféricos" },
+    { "id": 5, "nombre": "Logitech MX Keys", "precio": 119, "cat": "periféricos" },
+    { "id": 6, "nombre": "Keychron Q3 Pro", "precio": 179, "cat": "periféricos" },
+    { "id": 7, "nombre": "Sony WH-1000XM5", "precio": 349, "cat": "audio" },
+    { "id": 8, "nombre": "AirPods Pro 2", "precio": 249, "cat": "audio" },
+    { "id": 9, "nombre": "LG UltraWide 34", "precio": 799, "cat": "accesorios" },
+    { "id": 10, "nombre": "Anker 140W Hub", "precio": 89, "cat": "accesorios" }
+  ],
+  "categorias": [
+    { "id": 1, "nombre": "Laptops" },
+    { "id": 2, "nombre": "Periféricos" },
+    { "id": 3, "nombre": "Audio" },
+    { "id": 4, "nombre": "Accesorios" }
+  ]
+}

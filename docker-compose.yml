@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+
+  web:
+    image: nginx:alpine
+    container_name: mi-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src/index.html:/usr/share/nginx/html/index.html:ro
+      - ./src/styles.css:/usr/share/nginx/html/styles.css:ro
+      - ./src/script.js:/usr/share/nginx/html/script.js:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - mi-red-interna
+    depends_on:
+      - api
+
+  api:
+    image: clue/json-server
+    container_name: mi-api
+    volumes:
+      - ./db.json:/data/db.json:ro
+    networks:
+      - mi-red-interna
+    # Sin "ports": la API solo es accesible desde dentro de la red interna
+
+networks:
+  mi-red-interna:
+    driver: bridge
