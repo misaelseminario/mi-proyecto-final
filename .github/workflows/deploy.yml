@@ -4,19 +4,32 @@ on:
   push:
     branches: [ main ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
+
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
 
-    - name: Preparar archivos
-      run: mkdir -p build && cp -r src/* build/
+      - name: Preparar archivos
+        run: |
+          if [ -d "src" ]; then
+            mkdir -p build
+            cp -r src/* build/
+          else
+            echo "Error: carpeta src no encontrada"
+            exit 1
+          fi
 
-    - name: Deploy a GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+      - name: Deploy a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
