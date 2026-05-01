@@ -1,20 +1,50 @@
 {
   "productos": [
-    { "id": 1, "nombre": "MacBook Pro M3", "precio": 2499, "cat": "laptops" },
-    { "id": 2, "nombre": "ThinkPad X1 Carbon", "precio": 1699, "cat": "laptops" },
-    { "id": 3, "nombre": "Framework 16", "precio": 1299, "cat": "laptops" },
-    { "id": 4, "nombre": "MX Master 3S", "precio": 109, "cat": "periféricos" },
-    { "id": 5, "nombre": "Logitech MX Keys", "precio": 119, "cat": "periféricos" },
-    { "id": 6, "nombre": "Keychron Q3 Pro", "precio": 179, "cat": "periféricos" },
-    { "id": 7, "nombre": "Sony WH-1000XM5", "precio": 349, "cat": "audio" },
-    { "id": 8, "nombre": "AirPods Pro 2", "precio": 249, "cat": "audio" },
-    { "id": 9, "nombre": "LG UltraWide 34", "precio": 799, "cat": "accesorios" },
-    { "id": 10, "nombre": "Anker 140W Hub", "precio": 89, "cat": "accesorios" }
+    { "id": 1, "nombre": "MacBook Pro M3 Max", "precio": 2499, "precioAntes": 2799, "cat": "laptops", "rating": 4.9, "stock": 8, "badge": "Top Seller", "desc": "Chip M3 Max, 36GB RAM, 1TB SSD" },
+    { "id": 2, "nombre": "ThinkPad X1 Carbon Gen 12", "precio": 1699, "precioAntes": 1999, "cat": "laptops", "rating": 4.7, "stock": 15, "badge": "Oferta", "desc": "Intel Ultra 7, 32GB RAM, 1TB SSD" },
+    { "id": 3, "nombre": "Framework 16 AMD", "precio": 1299, "precioAntes": 1399, "cat": "laptops", "rating": 4.6, "stock": 5, "badge": "Modular", "desc": "Ryzen 9 7940HX, GPU intercambiable" },
+    { "id": 4, "nombre": "ASUS ROG Zephyrus G16", "precio": 1899, "precioAntes": 2199, "cat": "laptops", "rating": 4.8, "stock": 3, "badge": "Gaming", "desc": "RTX 4080, 240Hz OLED, 32GB RAM" },
+    { "id": 5, "nombre": "Dell XPS 15 OLED", "precio": 1799, "precioAntes": 1999, "cat": "laptops", "rating": 4.5, "stock": 12, "badge": null, "desc": "Core i9-13900H, OLED 3.5K touch" },
+    { "id": 6, "nombre": "MX Master 3S", "precio": 109, "precioAntes": 129, "cat": "periféricos", "rating": 4.9, "stock": 50, "badge": "Esencial", "desc": "8000 DPI, silencioso, Bolt USB" },
+    { "id": 7, "nombre": "Logitech MX Keys Mini", "precio": 99, "precioAntes": 119, "cat": "periféricos", "rating": 4.7, "stock": 30, "badge": "Oferta", "desc": "Teclado compacto retroiluminado" },
+    { "id": 8, "nombre": "Keychron Q3 Pro", "precio": 179, "precioAntes": 199, "cat": "periféricos", "rating": 4.8, "stock": 20, "badge": "Mecánico", "desc": "QMK/VIA, Gateron G Pro switches" },
+    { "id": 9, "nombre": "Razer DeathAdder V3 Pro", "precio": 139, "precioAntes": 159, "cat": "periféricos", "rating": 4.6, "stock": 18, "badge": null, "desc": "30K DPI, 90h batería, Focus Pro" },
+    { "id": 10, "nombre": "Sony WH-1000XM5", "precio": 299, "precioAntes": 349, "cat": "audio", "rating": 4.9, "stock": 25, "badge": "ANC #1", "desc": "ANC líder, 30h batería, LDAC" },
+    { "id": 11, "nombre": "AirPods Pro 2 USB-C", "precio": 249, "precioAntes": 279, "cat": "audio", "rating": 4.8, "stock": 40, "badge": "Apple", "desc": "ANC adaptativo, chip H2, Lossless" },
+    { "id": 12, "nombre": "Sennheiser Momentum 4", "precio": 279, "precioAntes": 329, "cat": "audio", "rating": 4.7, "stock": 10, "badge": "Hi-Fi", "desc": "60h batería, EQ personalizable" },
+    { "id": 13, "nombre": "LG UltraWide 34 OLED", "precio": 1199, "precioAntes": 1499, "cat": "accesorios", "rating": 4.8, "stock": 6, "badge": "OLED", "desc": "3440x1440, 175Hz, 0.1ms GtG" },
+    { "id": 14, "nombre": "Anker 240W GaN Charger", "precio": 89, "precioAntes": 109, "cat": "accesorios", "rating": 4.6, "stock": 60, "badge": "Potente", "desc": "4 puertos, PD 3.1, GaN III" },
+    { "id": 15, "nombre": "CalDigit TS4 Thunderbolt 4", "precio": 349, "precioAntes": 399, "cat": "accesorios", "rating": 4.9, "stock": 8, "badge": "Pro Hub", "desc": "18 puertos, 98W carga, 40Gbps" }
   ],
   "categorias": [
-    { "id": 1, "nombre": "Laptops" },
-    { "id": 2, "nombre": "Periféricos" },
-    { "id": 3, "nombre": "Audio" },
-    { "id": 4, "nombre": "Accesorios" }
-  ]
+    { "id": 1, "nombre": "Laptops", "slug": "laptops", "icono": "💻", "desc": "Workstations para devs y creadores", "count": 5 },
+    { "id": 2, "nombre": "Periféricos", "slug": "periféricos", "icono": "⌨️", "desc": "Teclados, ratones y más", "count": 4 },
+    { "id": 3, "nombre": "Audio", "slug": "audio", "icono": "🎧", "desc": "Auriculares y DACs de calidad", "count": 3 },
+    { "id": 4, "nombre": "Accesorios", "slug": "accesorios", "icono": "🖥️", "desc": "Monitores, hubs y cargadores", "count": 3 }
+  ],
+  "ofertas": [
+    { "id": 1, "titulo": "Flash Sale — Laptops", "descuento": 20, "expira": "2025-07-15T23:59:00", "productId": 1 },
+    { "id": 2, "titulo": "Bundle Dev Setup", "descuento": 15, "expira": "2025-07-20T23:59:00", "productId": 6 },
+    { "id": 3, "titulo": "Audio Week", "descuento": 18, "expira": "2025-07-18T23:59:00", "productId": 10 }
+  ],
+  "comunidad": [
+    { "id": 1, "usuario": "carlos_dev", "avatar": "CD", "rol": "Backend Engineer", "mensaje": "El setup con el ThinkPad + MX Master 3S es otro nivel para WSL2. 100% recomendado.", "likes": 34, "fecha": "2025-07-08" },
+    { "id": 2, "usuario": "ana.fullstack", "avatar": "AF", "rol": "Full Stack Dev", "mensaje": "Finalmente migré a Framework 16 y el ANC del Sony XM5 me salva en la oficina open space. ❤️", "likes": 57, "fecha": "2025-07-09" },
+    { "id": 3, "usuario": "miguel_sre", "avatar": "MS", "rol": "SRE @ Cloudflare", "mensaje": "CalDigit TS4 + LG OLED es el dock perfecto. Todo por USB-C, cero cables sueltos.", "likes": 89, "fecha": "2025-07-10" },
+    { "id": 4, "usuario": "laura.ux", "avatar": "LU", "rol": "UX Engineer", "mensaje": "Keychron Q3 Pro con switches tactiles + Figma = productividad máxima 🎨", "likes": 43, "fecha": "2025-07-11" },
+    { "id": 5, "usuario": "devops_rafa", "avatar": "DR", "rol": "DevOps Engineer", "mensaje": "El cargador GaN 240W es esencial cuando trabajas con 3 dispositivos a la vez en viaje.", "likes": 28, "fecha": "2025-07-07" }
+  ],
+  "soporte": [
+    { "id": 1, "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Envíos nacionales: 2-4 días hábiles. Internacional: 7-14 días. Tracking incluido en todos los pedidos." },
+    { "id": 2, "pregunta": "¿Tienen garantía los productos?", "respuesta": "Sí, todos los productos tienen garantía mínima de 1 año. Laptops y monitores tienen 2 años de garantía oficial del fabricante." },
+    { "id": 3, "pregunta": "¿Puedo devolver un producto?", "respuesta": "Tienes 30 días para devoluciones sin preguntas. El producto debe estar en su empaque original. Reembolso en 5 días hábiles." },
+    { "id": 4, "pregunta": "¿Aceptan pagos en cuotas?", "respuesta": "Sí, hasta 12 cuotas sin interés con tarjetas Visa y Mastercard seleccionadas. También aceptamos cripto (BTC, ETH, USDT)." },
+    { "id": 5, "pregunta": "¿Tienen stock en físico?", "respuesta": "Tenemos showroom en Quito (Ed. Centrum, Av. Naciones Unidas). Horario L-V 9:00-18:00, Sáb 10:00-14:00." }
+  ],
+  "stats": {
+    "clientes": 12400,
+    "productos": 150,
+    "paises": 8,
+    "satisfaccion": 98
+  }
 }

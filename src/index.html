@@ -5,35 +5,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🛒 TechStack — Tienda DevOps</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>🛒 TechStack — Tienda DevOps</h1>
-    <p>Frontend: <strong>nginx</strong> · API: <strong>json-server</strong> · Red: interna</p>
-  </header>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Tech<strong>Stack</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+        <li><a href="#categorias" class="nav-link">Catálogo</a></li>
+        <li><a href="#comunidad" class="nav-link">Comunidad</a></li>
+        <li><a href="#soporte" class="nav-link">Soporte</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-chat-nav" onclick="toggleChat()">💬 Chat</button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#inicio" class="nav-link-m">Inicio</a>
+      <a href="#ofertas" class="nav-link-m">Ofertas</a>
+      <a href="#categorias" class="nav-link-m">Catálogo</a>
+      <a href="#comunidad" class="nav-link-m">Comunidad</a>
+      <a href="#soporte" class="nav-link-m">Soporte</a>
+    </div>
+  </nav>
 
-  <main>
-    <section class="hero">
-      <h2>Bienvenido a TechStack</h2>
-      <p>Equipo profesional para devs. Desplegado con GitHub Pages + Docker.</p>
-      <button id="btn">Ver más info</button>
-    </section>
+  <!-- ===== INICIO ===== -->
+  <section id="inicio" class="s-inicio">
+    <div class="inicio-bg">
+      <div class="grid-overlay"></div>
+      <div class="glow g1"></div>
+      <div class="glow g2"></div>
+    </div>
+    <div class="inicio-content">
+      <div class="badge-pill">🚀 DevOps · Docker · nginx · json-server</div>
+      <h1 class="hero-title">
+        Equipo <em>pro</em> para<br>developers <span class="accent-word">reales</span>
+      </h1>
+      <p class="hero-sub">Hardware seleccionado para quienes viven en la terminal.<br>Sin fluff. Sin compromiso.</p>
+      <div class="hero-ctas">
+        <a href="#ofertas" class="btn-primary">Ver ofertas 🔥</a>
+        <a href="#categorias" class="btn-ghost">Catálogo completo →</a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-item"><span class="stat-num" data-target="12400">0</span><span class="stat-label">Clientes</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="150">0</span><span class="stat-label">Productos</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="8">0</span><span class="stat-label">Países</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="98">0</span><span class="stat-label">% Satisfacción</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">↓</div>
+  </section>
 
-    <section class="productos-section">
-      <h2>Productos</h2>
-      <ul id="productos"><li>Cargando...</li></ul>
-    </section>
+  <!-- ===== OFERTAS ===== -->
+  <section id="ofertas" class="s-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🔥 Flash Deals</span>
+        <h2 class="section-title">Ofertas del momento</h2>
+        <p class="section-sub">Precios que no duran. Calidad que sí.</p>
+      </div>
 
-    <section class="categorias-section">
-      <h2>Categorías</h2>
-      <ul id="categorias"><li>Cargando...</li></ul>
-    </section>
-  </main>
+      <div class="countdown-bar">
+        <span>⏱ Próxima oferta expira en:</span>
+        <div class="countdown" id="countdown">
+          <div class="cd-block"><span id="cd-h">00</span><small>hrs</small></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block"><span id="cd-m">00</span><small>min</small></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block"><span id="cd-s">00</span><small>seg</small></div>
+        </div>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 TechStack · Desplegado con <strong>GitHub Pages</strong> · Imagen en <strong>GHCR</strong></p>
+      <ul class="productos-grid" id="ofertasGrid">
+        <li class="product-skeleton"></li>
+        <li class="product-skeleton"></li>
+        <li class="product-skeleton"></li>
+      </ul>
+
+      <div class="section-header" style="margin-top:3rem">
+        <h2 class="section-title" style="font-size:1.5rem">Todos los productos</h2>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="laptops">💻 Laptops</button>
+        <button class="filter-btn" data-filter="periféricos">⌨️ Periféricos</button>
+        <button class="filter-btn" data-filter="audio">🎧 Audio</button>
+        <button class="filter-btn" data-filter="accesorios">🖥️ Accesorios</button>
+      </div>
+      <ul class="productos-grid" id="productosGrid">
+        <li class="product-skeleton"></li>
+        <li class="product-skeleton"></li>
+        <li class="product-skeleton"></li>
+        <li class="product-skeleton"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORÍAS ===== -->
+  <section id="categorias" class="s-section s-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">📦 Catálogo</span>
+        <h2 class="section-title">Categorías</h2>
+        <p class="section-sub">Explora por familia de producto.</p>
+      </div>
+      <ul class="cat-grid" id="catGrid">
+        <li class="cat-skeleton"></li>
+        <li class="cat-skeleton"></li>
+        <li class="cat-skeleton"></li>
+        <li class="cat-skeleton"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== COMUNIDAD ===== -->
+  <section id="comunidad" class="s-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">👥 Comunidad</span>
+        <h2 class="section-title">Lo que dicen los devs</h2>
+        <p class="section-sub">Reviews reales de nuestra comunidad técnica.</p>
+      </div>
+      <div class="testimonios-grid" id="testimoniosGrid">
+        <div class="product-skeleton" style="height:160px;border-radius:12px;"></div>
+        <div class="product-skeleton" style="height:160px;border-radius:12px;"></div>
+        <div class="product-skeleton" style="height:160px;border-radius:12px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOPORTE ===== -->
+  <section id="soporte" class="s-section s-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🛠️ Soporte</span>
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-sub">Todo lo que necesitas saber antes de comprar.</p>
+      </div>
+      <div class="faq-grid" id="faqGrid">
+        <div class="product-skeleton" style="height:60px;border-radius:8px;"></div>
+        <div class="product-skeleton" style="height:60px;border-radius:8px;"></div>
+        <div class="product-skeleton" style="height:60px;border-radius:8px;"></div>
+      </div>
+      <div class="soporte-cta">
+        <p>¿No encuentras lo que buscas?</p>
+        <button class="btn-primary" onclick="toggleChat()">Abrir chat en vivo →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Tech<strong>Stack</strong></span>
+        <p>Hardware curado para devs.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#categorias">Catálogo</a>
+        <a href="#comunidad">Comunidad</a>
+        <a href="#soporte">Soporte</a>
+      </div>
+      <div class="footer-tech">
+        <span>nginx</span><span>json-server</span><span>Docker</span><span>GitHub Pages</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 TechStack · Desplegado con <strong>GitHub Pages</strong> · Imagen en <strong>GHCR</strong></p>
+    </div>
   </footer>
+
+  <!-- ===== CHAT ===== -->
+  <div id="chatWidget" class="chat-widget">
+    <div class="chat-header">
+      <div class="chat-title">
+        <div class="chat-dot"></div>
+        <span>TechStack Chat</span>
+        <small>En línea ahora</small>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg msg-bot">
+        <div class="msg-avatar">⬡</div>
+        <div class="msg-bubble">¡Hola! Soy el asistente de TechStack. ¿En qué puedo ayudarte hoy? 👋</div>
+      </div>
+      <div class="msg msg-bot">
+        <div class="msg-avatar">⬡</div>
+        <div class="msg-bubble">Puedo ayudarte con <strong>productos, precios, envíos</strong> y más.</div>
+      </div>
+    </div>
+    <div class="chat-quick">
+      <button onclick="sendQuick('¿Cuánto tarda el envío?')">📦 Envíos</button>
+      <button onclick="sendQuick('¿Hay garantía?')">🛡️ Garantía</button>
+      <button onclick="sendQuick('¿Cuáles son las laptops en oferta?')">💻 Laptops</button>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Escribe un mensaje..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" onclick="sendChat()">↑</button>
+    </div>
+  </div>
+  <button class="chat-fab" id="chatFab" onclick="toggleChat()">
+    <span class="fab-icon">💬</span>
+    <span class="fab-badge" id="fabBadge">1</span>
+  </button>
 
   <script src="script.js"></script>
 </body>
